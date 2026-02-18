@@ -10,14 +10,13 @@
             --primary: #2563eb; /* Azul Tech */
             --secondary: #7c3aed; /* Morado Gaming */
             --accent: #f59e0b; /* Naranja Alerta */
+            --dark: #0f172a;    /* Fondo oscuro profesional */
             --bg: #f8fafc;
             --text: #1e293b;
             --card-bg: #ffffff;
         }
 
-        * {
-            box-sizing: border-box; /* Asegura que los márgenes no rompan el ancho en móviles */
-        }
+        * { box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -50,12 +49,8 @@
             margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;
         }
 
-        /* --- CONTENEDOR PRINCIPAL --- */
-        .container { 
-            max-width: 900px; 
-            margin: 0 auto; 
-            padding: 30px 20px; /* Padding cómodo para móviles */
-        }
+        /* --- CONTENEDOR --- */
+        .container { max-width: 900px; margin: 0 auto; padding: 30px 20px; }
         
         /* --- CHAT INTRO --- */
         .chat-bubble {
@@ -68,53 +63,41 @@
             margin-bottom: 40px;
             position: relative;
         }
-        .chat-bubble::before { content: "📢 Profesor:"; font-weight: bold; color: var(--accent); display: block; margin-bottom: 5px; font-size: 0.9rem; }
+        .chat-bubble::before { content: "📢 ¡Hola a todos!:"; font-weight: bold; color: var(--accent); display: block; margin-bottom: 5px; font-size: 0.9rem; }
 
-        /* --- SECCIÓN 1: CARDS TECH --- */
+        /* --- SECCIONES COMUNES --- */
         .section-title { text-align: center; margin-bottom: 25px; font-size: 1.8rem; color: var(--text); line-height: 1.2; }
         .section-title span { color: var(--primary); font-size: 1rem; display: block; margin-top: 5px; font-weight: normal; }
 
+        /* --- GRID TECH --- */
         .tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Se adapta auto */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
             margin-bottom: 50px;
         }
-
         .card {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            border: 1px solid #e2e8f0;
+            background: var(--card-bg); padding: 25px; border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; border: 1px solid #e2e8f0;
         }
         .card-icon { font-size: 2.5rem; margin-bottom: 10px; display: block; }
         .card h3 { color: var(--primary); margin-bottom: 8px; font-size: 1.2rem; }
         .card p { font-size: 0.95rem; color: #64748b; margin: 0; }
 
-        /* --- SECCIÓN 2: ECONOMÍA (DARK MODE) --- */
+        /* --- ECONOMÍA DARK MODE --- */
         .economy-section {
-            background: #1e293b;
-            color: white;
-            padding: 30px;
-            border-radius: 25px;
-            margin-bottom: 50px;
+            background: #1e293b; color: white; padding: 30px;
+            border-radius: 25px; margin-bottom: 50px;
         }
         .economy-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Por defecto 2 columnas */
-            gap: 30px;
-            margin-top: 25px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 25px;
         }
         .concept-box h3 { color: var(--accent); margin-bottom: 10px; font-size: 1.3rem; }
         .highlight { font-weight: bold; color: #fbbf24; display: block; margin-top: 10px; background: rgba(251, 191, 36, 0.1); padding: 10px; border-radius: 8px; }
 
-        /* --- SECCIÓN 3: TIMELINE --- */
+        /* --- TIMELINE --- */
         .timeline {
-            border-left: 3px solid var(--secondary);
-            padding-left: 20px;
-            margin: 10px 0 50px 10px;
+            border-left: 3px solid var(--secondary); padding-left: 20px; margin: 10px 0 50px 10px;
         }
         .timeline-item { margin-bottom: 35px; position: relative; }
         .timeline-item::before {
@@ -127,53 +110,62 @@
             border-radius: 8px; font-size: 0.8rem; font-weight: bold; 
             display: inline-block; margin-bottom: 5px;
         }
-        .timeline-item h3 { font-size: 1.1rem; margin-bottom: 5px; }
+
+        /* --- NUEVA SECCIÓN: MERCADO LABORAL --- */
+        .job-market {
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .job-logos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .job-item {
+            background: #f1f5f9;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+        .job-punchline {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-top: 15px;
+        }
 
         /* --- CTA FINAL --- */
         .cta-box {
             background: linear-gradient(90deg, #10b981, #059669);
-            color: white;
-            padding: 35px 20px;
-            text-align: center;
-            border-radius: 20px;
-            margin-bottom: 30px;
+            color: white; padding: 35px 20px; text-align: center;
+            border-radius: 20px; margin-bottom: 30px;
         }
         .cta-btn {
-            display: inline-block;
-            background: white;
-            color: #059669;
-            padding: 16px 30px;
-            margin-top: 20px;
-            border-radius: 50px;
-            font-weight: bold;
-            text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            font-size: 1.1rem;
+            display: inline-block; background: white; color: #059669;
+            padding: 16px 30px; margin-top: 20px; border-radius: 50px;
+            font-weight: bold; text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2); font-size: 1.1rem;
             transition: transform 0.2s;
         }
 
-        /* --- OPTIMIZACIÓN MÓVIL (MEDIA QUERIES) --- */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             header { padding: 40px 15px; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; }
             header h1 { font-size: 2rem; }
-            
             .container { padding: 20px 15px; }
-            
             .section-title { font-size: 1.6rem; }
-            
-            /* Pone las columnas de economía en una sola fila vertical */
             .economy-grid { grid-template-columns: 1fr; gap: 30px; }
             .economy-section { padding: 25px 20px; }
-            
-            /* Ajustes del timeline para pantallas estrechas */
             .timeline { margin-left: 5px; padding-left: 25px; }
-            
-            /* Botón grande para dedos */
-            .cta-btn { 
-                display: block; 
-                width: 100%; 
-                text-align: center; 
-            }
+            .cta-btn { display: block; width: 100%; text-align: center; }
         }
     </style>
 </head>
@@ -254,9 +246,24 @@
             </div>
         </div>
 
+        <div class="job-market">
+            <h2 style="font-size: 1.5rem; color: var(--dark);">¿Quién contrata economistas hoy?</h2>
+            <p style="margin-top: 10px; color: #64748b;">No solo bancos. Las empresas tecnológicas buscan quien entienda estos datos.</p>
+            
+            <div class="job-logos">
+                <div class="job-item">🚗 Uber: precios dinámicos</div>
+                <div class="job-item">📦 Amazon: rutas logísticas</div>
+                <div class="job-item">🎵 Spotify: algoritmos de gustos</div>
+            </div>
+
+            <p class="job-punchline">
+                "Si estudian economía hoy, no terminarán en un cubículo llenando papeles precisamente. También podrían diseñar los algoritmos que mueven al mundo."
+            </p>
+        </div>
+
         <div class="cta-box">
-            <h2>🚀 Conclusión</h2>
-            <p style="margin-top: 10px; opacity: 0.9;">Este código es <strong>ciencia de datos</strong>. Usamos algoritmos para entender cómo las políticas públicas afectan la vida diaria.</p>
+            <h2>🚀 ¡Vamos a verlo en acción!</h2>
+            <p style="margin-top: 10px; opacity: 0.9;">Los economistas del siglo XXI usan código.</p>
             
             <a href=https://adrepech-netizen.github.io/cronografias/cajanegra.html class="cta-btn">▶️ Iniciar simulación</a>
         </div>
