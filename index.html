@@ -121,19 +121,39 @@
             text-align: center;
         }
         .job-logos {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px 0;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin: 22px 0;
+            text-align: left;
         }
         .job-item {
             background: #f1f5f9;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 0.9rem;
+            padding: 18px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
             color: var(--dark);
+        }
+        .job-item-title {
+            font-weight: 800;
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 6px;
+            display: block;
+        }
+        .job-item-role {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--secondary);
+            margin-bottom: 8px;
+            display: block;
+        }
+        .job-item p {
+            margin: 0;
+            font-size: 0.88rem;
+            color: #475569;
+            line-height: 1.45;
         }
         .job-punchline {
             font-size: 1.1rem;
@@ -251,9 +271,21 @@
             <p style="margin-top: 10px; color: #64748b;">No solo bancos. Las empresas tecnológicas buscan quien entienda estos datos.</p>
             
             <div class="job-logos">
-                <div class="job-item">🚗 Uber: precios dinámicos</div>
-                <div class="job-item">📦 Amazon: rutas logísticas</div>
-                <div class="job-item">🎵 Spotify: algoritmos de gustos</div>
+                <div class="job-item">
+                    <span class="job-item-title">🚗 Uber: precios dinámicos</span>
+                    <span class="job-item-role">Elasticidad y diseño de mercados</span>
+                    <p>Calculan en tiempo real cuánto subir la tarifa cuando llueve para incentivar a más conductores sin perder pasajeros.</p>
+                </div>
+                <div class="job-item">
+                    <span class="job-item-title">📦 Amazon: rutas logísticas</span>
+                    <span class="job-item-role">Optimización y subastas</span>
+                    <p>Minimizan costos de envío prediciendo qué vas a comprar antes de que hagas clic y diseñan el algoritmo de precios del <em>Marketplace</em>.</p>
+                </div>
+                <div class="job-item">
+                    <span class="job-item-title">🎵 Spotify: algoritmos de gustos</span>
+                    <span class="job-item-role">Economía conductual y atención</span>
+                    <p>Equilibran canciones conocidas y nuevas para evitar que canceles tu suscripción, además de diseñar el reparto de regalías.</p>
+                </div>
             </div>
 
             <p class="job-punchline">
@@ -265,7 +297,7 @@
             <h2>🚀 ¡Vamos a verlo en acción!</h2>
             <p style="margin-top: 10px; opacity: 0.9;">Los economistas del siglo XXI usan código.</p>
             
-            <a href=https://adrepech-netizen.github.io/cronografias/cajanegra.html class="cta-btn">▶️ Iniciar simulación</a>
+            <a href="https://adrepech-netizen.github.io/cronografias/cajanegra.html" class="cta-btn">▶️ Iniciar simulación</a>
         </div>
 
     </div>
